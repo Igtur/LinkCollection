@@ -1,0 +1,5 @@
+{
+   "port": 4000,
+   "mongoUri": "mongodb+srv://Igor:DOPkYVSaMZdUkOAH@cluster0.tuvadvf.mongodb.net/app?retryWrites=true&w=majority",
+   "jwtSecret": "secret string for login"
+}
