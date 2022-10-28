@@ -1,5 +1,6 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'; // import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'; 
+// import { Routes, Route, Navigate } from 'react-router-dom';
 import { LinksPage } from './pages/LinksPage';
 import { CreatePage } from './pages/CreatePage';
 import { DetailPage } from './pages/DetailPage';
@@ -9,8 +10,12 @@ export const useRoutes = (isAuthenticated) => {
     if (isAuthenticated) {
         return (
             <Routes>
+
                 <Route path='/links' exact element = {<LinksPage />}>
                    
+                </Route>
+                <Route path='/' exact element = {<CreatePage />}>  
+                   {/* Добавил этот роут на страницу по умолчанию вместо Redirect который отключили в v6 */}
                 </Route>
                 <Route path='/create' exact element = {<CreatePage />}>
                    
@@ -18,7 +23,9 @@ export const useRoutes = (isAuthenticated) => {
                 <Route path='/detail/:id' element = {<DetailPage />}>
                     
                 </Route>
+
                 {/* <Navigate to="/create" /> */}
+
             </Routes>
         )
     }
